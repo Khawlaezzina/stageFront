@@ -29,9 +29,13 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
+              
             ],
             "styles": [
-              "src/styles.scss"
+              "C:/Users/LENOVO/Desktop/Stage_dete/stage_front/stageFront/src/styles.scss",
+              "C:/Users/LENOVO/Desktop/Stage_dete/stage_front/stageFront/node_modules/bootstrap/dist/css/bootstrap.css",
+              
+           
             ],
             "scripts": []
           },
@@ -96,10 +100,15 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/scss/material-dashboard.scss",
+              "src/assets/css2/demo.css",
+              "src/assets/css2/style1.css"
             ],
             "styles": [
-              "src/styles.scss"
+              "C:/Users/LENOVO/Desktop/Stage_dete/stage_front/stageFront/src/styles.scss",
+              "C:/Users/LENOVO/Desktop/Stage_dete/stage_front/stageFront/node_modules/bootstrap/dist/css/bootstrap.css"
+       
             ],
             "scripts": []
           }

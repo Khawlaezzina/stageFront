@@ -1,0 +1,149 @@
+<section id="main-content">
+    <section class="wrapper">
+  <div class="main-content">
+      <div class="container-fluid">
+             
+        <div class="row" style="height:relative;width:relative" >
+            <section class="wrapper" id="themes" style="margin-top:2px;margin-bottom:10px;">
+              <div class="container">
+              <div class="col-lg-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 style="color: #337ab7;"><i class="fa fa-angle-right"></i> Liste des changements En attente</h4>
+                  </div>
+                 
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>id</th>
+                          <th>Date de début</th>
+                          <th>type</th>
+                            <th>description</th>
+                        
+                          <th>Afficher la liste des taches</th>
+                          <th>Affecter à un technicien</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let ticket of tickets">
+                          <td>{{ ticket.id }}</td>
+                          <td>{{ ticket.dateDebut | date }}</td>
+                          <td>{{ ticket.type }}</td>
+                          <td>{{ ticket.description }}</td>
+                          
+                    
+                        <td> <button class="btn btn-success" (click)="ListTaches(ticket)">Afficher la liste des taches</button></td>
+                        <td> <button class="btn btn-success" (click)="listTechnicien(ticket)">Affecter un technicien</button></td>
+                          
+                         
+                       
+                        </tr>
+                      </tbody>
+                    </table>
+               
+                </div>
+              </div>
+              <!--/.col-->
+            
+              <!--/.col-->
+            </div>
+            </section>
+          </div>
+
+          <div class="row" style="height:relative;width:relative" >
+            <section class="wrapper" id="themes" style="margin-top:2px;margin-bottom:10px;">
+              <div class="container">
+              <div class="col-lg-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 style="color: #337ab7;"><i class="fa fa-angle-right"></i> Liste des changements En cours</h4>
+                  </div>
+                 
+                    <table class="table">
+                      <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Date de début</th>
+                            <th>type</th>
+                            <th>Description</th>
+                          
+                            <th>Afficher la liste des taches</th>
+                            <th>Affecter un technicien</th>
+                       
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let ticket of ticketsEnCours">
+                            <td>{{ ticket.id }}</td>
+                            <td>{{ ticket.dateDebut | date }}</td>
+                            <td>{{ ticket.type }}</td>
+                            <td>{{ ticket.description }}</td>
+                            <td> <button class="btn btn-success" (click)="ListTaches(ticket)">Afficher la liste des taches</button></td>
+                            <td> <button class="btn btn-success" (click)="listTechnicien(ticket)">Affecter un technicien</button></td>
+                          
+                         
+                       
+                        </tr>
+                      </tbody>
+                    </table>
+               
+                </div>
+              </div>
+              <!--/.col-->
+            
+              <!--/.col-->
+            </div>
+            </section>
+          </div>
+          <div class="row" style="height:relative;width:relative" >
+            <section class="wrapper" id="themes" style="margin-top:2px;margin-bottom:10px;">
+              <div class="container">
+              <div class="col-lg-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 style="color: #337ab7;"><i class="fa fa-angle-right"></i> Liste des changements Résolu</h4>
+                  </div>
+                 
+                    <table class="table">
+                      <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Date de début</th>
+                            <th>Date de fin</th>
+                            <th>type</th>
+                            <th>Description</th>
+                          
+                            <th>Afficher la liste des taches</th>
+                         
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let ticket of ticketsResolu">
+                            <td>{{ ticket.id }}</td>
+                            <td>{{ ticket.dateDebut | date }}</td>
+                            <td>{{ ticket.dateFin | date }}</td>
+                            <td>{{ ticket.type }}</td>
+                            <td>{{ ticket.description }}</td>
+                            <td> <button class="btn btn-success" (click)="ListTaches(ticket)">Afficher la liste des taches</button></td>
+                        
+                          
+                         
+                       
+                        </tr>
+                      </tbody>
+                    </table>
+               
+                </div>
+              </div>
+              <!--/.col-->
+            
+              <!--/.col-->
+            </div>
+            </section>
+          </div>
+      </div>
+  </div>
+    </section>
+</section>

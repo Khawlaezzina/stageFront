@@ -1,0 +1,26 @@
+<section id="main-content">
+    <section class="wrapper">
+    
+    
+    <h4 style="color: #337ab7;"><i class="fa fa-angle-right"></i> Affecter un technicien </h4>
+    <hr>
+    <section class="wrapper" id="themes" style="margin-top:2px;margin-bottom:10px;">
+          <div class="container">
+            <div class="row">
+                <div class="col-sm-4" style="width:300px;height:230;" *ngFor="let technicien of techniciens">
+                    <div class="thumbnail" style="background-color: #a7cdee;">
+                      
+                      <div class="caption">
+                        <h3>{{technicien.prenom}} {{ technicien.nom}}</h3>
+                        
+                        <p><button class="btn btn-primary lb-link smoothie" (click)="Affecter(technicien)">Affecter </button></p>
+                       
+                      </div>
+                    </div>
+                  </div>
+            </div>
+              </div>
+    </section>
+    </section>
+</section>
+

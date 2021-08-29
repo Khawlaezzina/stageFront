@@ -1,0 +1,23 @@
+<footer *ngIf="loginService.isUserLoggedIn() || loginServiceApprobateur.isUserLoggedIn() || loginServiceTechnicien.isUserLoggedIn() ||loginServiceAdmin.isUserLoggedIn()">
+    <div class="footerHeader" ></div>
+    <div class="container">
+		<div class="col-md-4" >
+		    <h3>A propos de nous</h3>
+		    <p>
+		        Institué le 30 Décembre 1975, le Centre National de l’Informatique est un établissement public à caractère non administratif doté de la personnalité civile et de l’autonomie financière.  
+Le CNI est un organisme placé sous la tutelle du Ministre des Technologies de la Communication, et opérant dans les domaines du secteur de l’informatique et des technologies de la communication et certifié ISO 9001version 2015.
+		    </p>
+		</div>
+		
+	
+		<div class="col-md-4" >
+		    <h3>Information de contact</h3>
+		    <ul>
+		        <li>Numéro de téléphone : + 216 71 783 055</li>
+		        <li>E-mail : webcni@cni.tn</li>
+		        <li>Fax : + 216 71 781 862</li>
+		    </ul>
+		   
+		</div>
+    </div>
+</footer>

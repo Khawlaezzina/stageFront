@@ -1,0 +1,90 @@
+<section id="main-content">
+    <section class="wrapper">
+      <h3 style="color: #337ab7;"><i class="fa fa-angle-right"></i> Ajouter un nouveau CI:</h3>
+      <div class="row mt">
+       
+        <div class="col-lg-12">
+          <div class="form-panel">
+
+      <!--<h4 class="page-header">Default Implementation</h4>-->  
+        <form [formGroup]="updateCIForm" (ngSubmit)="onSubmitForm()">
+           
+    
+
+            <div class="form-group">
+               <p></p>
+                <label class="control-label col-md-3">Le nom du CI</label>
+                                  
+                    <div class="col-md-3 col-xs-11">                    
+                        <select  class="btn btn-default" formControlName="nom" [(ngModel)] = "_nom">
+                          <option>Application web</option>
+                          <option>Autre logiciel</option>
+                          <option>Equipement reseau</option>
+                          <option>Instance Middleware</option>
+                          <option>Instance de base de données</option>
+                          <option>Logiciel PC</option>
+                          <option>Middleware</option>
+                          <option>Processus métier</option>
+                          <option>Serveur</option>
+                          <option>Serveur Web</option>
+                          <option>Serveur de base de données</option>
+                          <option>Solution applicative</option>
+                        </select>
+                                                             
+                    </div>
+               
+              </div>
+              
+              <div class="form-group">
+                 <p></p>
+                <label class="control-label col-md-3">L'organisation du CI</label>
+                <div class="col-md-3 col-xs-11">                    
+                    <input class=" form-control"  type="text" formControlName="organisation" [(ngModel)] = "_organisation">
+                                                          
+                </div>
+              </div>
+              
+
+              <div class="form-group">
+                  <p></p>
+                <label class="control-label col-md-3">La description du CI</label>
+                <div class="col-md-3 col-xs-11">                    
+                    <input class=" form-control" type="text" formControlName="description" [(ngModel)] = "_description" >
+                                                          
+                </div>
+              </div>
+              <div class="form-group">
+                <p></p>
+              <label class="control-label col-md-3">L'emplacement du CI</label>
+              <div class="col-md-3 col-xs-11">                    
+                  <input class=" form-control" type="text" formControlName="emplacement" [(ngModel)] = "_emplacement" >
+                                                        
+              </div>
+            </div>
+              <div class="form-group">
+                  <p></p>
+                <label class="control-label col-md-3">Criticité</label>
+                <div class="col-md-3 col-xs-11">                    
+                    <select  class="btn btn-default" formControlName="criticite" [(ngModel)] = "_criticite">
+                      <option>Basse</option>
+                      <option>Haute</option>
+                      <option>Moyenne</option>
+                    </select>
+                                                         
+                </div>
+              </div>
+             
+              <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <button type="submit" class="btn btn-primary" >Modifier</button>
+                </div>
+              </div>
+
+
+        </form>
+    </div>
+</div>
+      </div></section></section>
+
+
+

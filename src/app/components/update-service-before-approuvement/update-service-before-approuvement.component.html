@@ -1,0 +1,68 @@
+<section id="main-content">
+    <section class="wrapper">
+      <h3 style="color: #337ab7;"><i class="fa fa-angle-right"></i> Ajouter une nouvelle ticket:</h3>
+      <div class="row mt">
+       
+        <div class="col-lg-12">
+          <div class="form-panel">
+  
+      <!--<h4 class="page-header">Default Implementation</h4>-->  
+        <form [formGroup]="updateServiceForm" (ngSubmit)="onSubmitForm()">
+           
+    
+  
+            <div class="form-group">
+               <p></p>
+                <label class="control-label col-md-3">Le sujet du ticket</label>
+                <div class="col-md-3 col-xs-11">                    
+                    <input class=" form-control" type="text" [(ngModel)] = "_sujet" formControlName="sujet" >
+                                                          
+                </div>
+              </div>
+              
+              <div class="form-group">
+                 <p></p>
+                <label class="control-label col-md-3">La description du service</label>
+                <div class="col-md-3 col-xs-11">                    
+                    <input class=" form-control"  type="textarea" [(ngModel)] = "_description" formControlName="description">
+                                                          
+                </div>
+              </div>
+           
+  
+              <div class="form-group">
+                  <p></p>
+                <label class="control-label col-md-3">Impact</label>
+                <div class="col-md-3 col-xs-11">                    
+                    <select  class="btn btn-default" [(ngModel)] = "_impact" formControlName="impact">
+                      <option>Fort</option>
+                      <option>Moyen</option>
+                      <option>Faible</option>
+                    </select>
+                                                         
+                </div>
+              </div>
+              <div class="form-group">
+                <p></p>
+                <label class="control-label col-md-3">Urgence</label>
+                <div class="col-md-3 col-xs-11">                    
+                    <select  class="btn btn-default" [(ngModel)] = "_urgence" formControlName="urgence">
+                      <option>Fort</option>
+                      <option>Moyen</option>
+                      <option>Faible</option>
+                    </select>
+                                                         
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <button type="submit" class="btn btn-primary" >Approuver</button>
+                </div>
+              </div>
+  
+  
+        </form>
+    </div>
+  </div>
+      </div></section></section>
+  

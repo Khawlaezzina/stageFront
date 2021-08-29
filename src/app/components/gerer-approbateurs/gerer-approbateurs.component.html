@@ -1,0 +1,36 @@
+
+            <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Nom</th>
+                  <th >Prénom</th>
+                  <th>Numéro de téléphone</th>
+                  <th>Adresse</th>
+                  <th >Adresse mail</th>
+                  <th >Departement</th>   
+                  <th >Supprimer</th> 
+                  <th>Modifier</th>              
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let approbateur of approbateurs">
+                    <td>{{approbateur.id}}</td>
+                    <td>{{approbateur.nom}}</td>
+                    <td>{{approbateur.prenom}}</td>
+                    <td>{{approbateur.numeroTelephone}}</td>
+                    <td>{{approbateur.adresse}}</td>
+                    <td>{{approbateur.email}}</td>
+                    <td>{{approbateur.departement}}</td>
+                    <td><button (click)="deleteApprobateur(approbateur)" class="btn btn-danger">Supprimer</button></td>
+                    <td><button (click)="updateApprobateur(approbateur)" class="btn btn-warning">Modifier</button></td>
+                    
+                  </tr>
+                
+              </tbody>
+            
+            </table>
+            <button (click)="AddApprobateur()" class="btn btn-warning">Ajouter un approbateur</button>
+
+

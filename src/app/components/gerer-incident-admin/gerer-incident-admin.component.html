@@ -1,0 +1,162 @@
+<section id="main-content">
+    <section class="wrapper">
+  <div class="main-content">
+      <div class="container-fluid">
+             
+        <div class="row" style="height:relative;width:relative" >
+            <section class="wrapper" id="themes" style="margin-top:2px;margin-bottom:10px;">
+              <div class="container">
+              <div class="col-lg-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 style="color: #337ab7;"><i class="fa fa-angle-right"></i> Liste des tickets d'incident En attente</h4>
+                  </div>
+                 
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Sujet</th>
+                          <th>Date d'ouverture</th>
+                          <th>Description</th>
+                          <th>Cause</th>
+                          <th>Mot clé</th>
+                          <th>Utilisateur</th>
+                          <th>Approbateur</th>
+                          <th>Ajouter une solution</th>
+                          <th>Affecter à un technicien</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let ticket of tickets">
+                          <td>{{ ticket.sujet }}</td>
+                          <td>{{ ticket.dateOuverture | date }}</td>
+                          <td>{{ ticket.description }}</td>
+                          <td>{{ticket.cause}}</td>
+                          <td>{{ticket.motCle}}</td>
+                          <td>{{ ticket.idUtilisateur.nom }}  {{ ticket.idUtilisateur.prenom }}</td>
+                        <td>{{ ticket.idApprobateur.nom }}  {{ ticket.idApprobateur.prenom }}</td>
+                        <td> <button class="btn btn-success" (click)="addSolution(ticket)">Ajouter une solution</button></td>
+                        <td> <button class="btn btn-success" (click)="listTechnicien(ticket)">Affecter un technicien</button></td>
+                          
+                         
+                       
+                        </tr>
+                      </tbody>
+                    </table>
+               
+                </div>
+              </div>
+              <!--/.col-->
+            
+              <!--/.col-->
+            </div>
+            </section>
+          </div>
+
+          <div class="row" style="height:relative;width:relative" >
+            <section class="wrapper" id="themes" style="margin-top:2px;margin-bottom:10px;">
+              <div class="container">
+              <div class="col-lg-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 style="color: #337ab7;"><i class="fa fa-angle-right"></i> Liste des tickets d'incident En cours</h4>
+                  </div>
+                 
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Sujet</th>
+                          <th>Date d'ouverture</th>
+                          <th>Description</th>
+                          <th>Cause</th>
+                          <th>Mot clé</th>
+                          <th>Utilisateur</th>
+                          <th>Approbateur</th>
+                          <th>Liste des techniciens</th>
+                       
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let ticket of ticketsEnCours">
+                          <td>{{ ticket.sujet }}</td>
+                          <td>{{ ticket.dateOuverture | date }}</td>
+                          <td>{{ ticket.description }}</td>
+                          <td>{{ticket.cause}}</td>
+                          <td>{{ticket.motCle}}</td>
+                          <td>{{ ticket.idUtilisateur.nom }}  {{ ticket.idUtilisateur.prenom }}</td>
+                            <td>{{ ticket.idApprobateur.nom }}  {{ ticket.idApprobateur.prenom }}</td>
+                            <td> <button class="btn btn-success" (click)="listeTechnicien(ticket)">Afficher la liste des techniciens</button></td>
+                          
+                         
+                       
+                        </tr>
+                      </tbody>
+                    </table>
+               
+                </div>
+              </div>
+              <!--/.col-->
+            
+              <!--/.col-->
+            </div>
+            </section>
+          </div>
+          <div class="row" style="height:relative;width:relative" >
+            <section class="wrapper" id="themes" style="margin-top:2px;margin-bottom:10px;">
+              <div class="container">
+              <div class="col-lg-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 style="color: #337ab7;"><i class="fa fa-angle-right"></i> Liste des tickets d'incident Résolu</h4>
+                  </div>
+                 
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Sujet</th>
+                          <th>Date d'ouverture</th>
+                          <th>Description</th>
+                          <th>Cause</th>
+                          <th>Mot clé</th>
+                          <th>Utilisateur</th>
+                          <th>Approbateur</th>
+                          <th>Solution</th>
+                          <th>Type de solution</th>
+                          <th>Changer de solution</th>
+                         
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let ticket of ticketsResolu">
+                          <td>{{ ticket.sujet }}</td>
+                          <td>{{ ticket.dateOuverture | date }}</td>
+                          <td>{{ ticket.description }}</td>
+                          <td>{{ticket.cause}}</td>
+                          <td>{{ticket.motCle}}</td>
+                          <td>{{ ticket.idUtilisateur.nom }}  {{ ticket.idUtilisateur.prenom }}</td>
+                            <td>{{ ticket.idApprobateur.nom }}  {{ ticket.idApprobateur.prenom }}</td>
+                            <td>{{ticket.solution}}</td>
+                            <td>{{ticket.typeDeSolution}}</td>
+                            <td> <button class="btn btn-success" (click)="updateSolution(ticket)">Modifier la solution</button></td>
+                        
+                          
+                         
+                       
+                        </tr>
+                      </tbody>
+                    </table>
+               
+                </div>
+              </div>
+              <!--/.col-->
+            
+              <!--/.col-->
+            </div>
+            </section>
+          </div>
+      </div>
+  </div>
+    </section>
+</section>

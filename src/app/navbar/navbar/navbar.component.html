@@ -1,0 +1,183 @@
+<section id="container">
+    <header class="header black-bg" *ngIf="loginService.isUserLoggedIn() || loginServiceApprobateur.isUserLoggedIn() || loginServiceTechnicien.isUserLoggedIn() ||loginServiceAdmin.isUserLoggedIn()">
+        <div class="sidebar-toggle-box">
+          <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+        </div>
+        <!--logo start-->
+        <a routerLink="/dashboardUser" class="logo" *ngIf="loginService.isUserLoggedIn()"><b *ngIf="loginService.isUserLoggedIn()">CNI<span>Portail</span></b></a>
+        <a routerLink="/dashboardTechnicien" class="logo" *ngIf="loginServiceTechnicien.isUserLoggedIn()"><b *ngIf="loginServiceTechnicien.isUserLoggedIn()">CNI<span>Portail</span></b></a>
+        <a routerLink="/dashboardAdmin" class="logo" *ngIf="loginServiceAdmin.isUserLoggedIn()"><b *ngIf="loginServiceAdmin.isUserLoggedIn()">CNI<span>Portail</span></b></a>
+        <a routerLink="/dashboardApprobateur" class="logo" *ngIf="loginServiceApprobateur.isUserLoggedIn()"><b *ngIf="loginServiceApprobateur.isUserLoggedIn()">CNI<span>Portail</span></b></a>
+        <!--logo end-->
+        <div class="nav notify-row" id="top_menu">
+          <!--  notification start -->
+          <ul class="nav top-menu">
+            <!-- settings start -->
+            <li class="dropdown">
+     
+             
+            
+         
+              </li>
+              
+          </ul>
+            <!-- settings end -->
+            <!-- inbox dropdown start-->
+        </div>
+        <div class="top-menu">
+          <ul class="nav pull-right top-menu" style="position: relative;">
+          
+           
+            <li *ngIf="loginServiceAdmin.isUserLoggedIn()"><a class="logout" routerLink="/logoutAdmin">Se déconnecter</a></li>
+            <li *ngIf="loginServiceAdmin.isUserLoggedIn()"><button class="logout" (click)="onOpen()">Catalogue de service</button></li>
+            <li *ngIf="loginService.isUserLoggedIn()"><a class="logout" routerLink="/newTicketUser">Nouveau incident</a></li>
+            <li *ngIf="loginServiceAdmin.isUserLoggedIn()"><a class="logout" routerLink="/newChangement">Nouveau changement</a></li>
+            <li *ngIf="loginService.isUserLoggedIn()"><a class="logout" routerLink="/newServiceUser">Nouveau service</a></li>
+            <li *ngIf="loginService.isUserLoggedIn()"><a class="logout" routerLink="/logoutUser">Se déconnecter</a></li>
+           
+            <li *ngIf="loginServiceTechnicien.isUserLoggedIn()"><a class="logout" routerLink="/logoutTechnicien">Se déconnecter</a></li>
+            <li *ngIf="loginServiceTechnicien.isUserLoggedIn()"><button class="logout" (click)="onOpen()">Catalogue de service</button></li>
+            <li *ngIf="loginServiceApprobateur.isUserLoggedIn()"><a class="logout" routerLink="/newTicketApprobateur">Nouveau incident</a></li>
+            <li *ngIf="loginServiceApprobateur.isUserLoggedIn()"><a class="logout" routerLink="/newServiceApprobateur">Nouveau service</a></li>
+            <li *ngIf="loginServiceApprobateur.isUserLoggedIn()"><a class="logout" routerLink="/logoutApprobateur">Se déconnecter</a></li>
+          </ul>
+        </div>
+        
+      </header>
+      <aside *ngIf="loginService.isUserLoggedIn() || loginServiceApprobateur.isUserLoggedIn() || loginServiceTechnicien.isUserLoggedIn() ||loginServiceAdmin.isUserLoggedIn()">
+        <div id="sidebar" class="nav-collapse">
+          <!-- sidebar menu start-->
+          <ul class="sidebar-menu" id="nav-accordion" *ngIf="loginService.isUserLoggedIn()">
+            <p class="centered"> <img src="https://th.bing.com/th/id/R.348c74d90005eff9dc59a712b0e3bdab?rik=uaM9YNz79W8%2fuQ&pid=ImgRaw&r=0" class="img-circle" width="80"> </p>
+            <h5 class="centered">{{ firstName }} {{ lastName }}</h5>
+            <li class="mt">
+              <a routerLink="/dashboardUser">
+                <i class="fa fa-dashboard"></i>
+                <span>Acceuil</span>
+                </a>
+            </li>
+           
+     
+          </ul>
+          <!-- sidebar menu end-->
+
+          <ul class="sidebar-menu" id="nav-accordion" *ngIf="loginServiceApprobateur.isUserLoggedIn()">
+            <p class="centered"> <img src="https://th.bing.com/th/id/R.348c74d90005eff9dc59a712b0e3bdab?rik=uaM9YNz79W8%2fuQ&pid=ImgRaw&r=0" class="img-circle" width="80">  </p>
+            <h5 class="centered"> {{ firstName }}  {{ lastName }}</h5>
+            <li class="mt">
+              <a routerLink="/dashboardApprobateur">
+                <i class="fa fa-dashboard"></i>
+                <span>Acceuil</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+              <a routerLink="/listTicketsForApprouvement">
+                <i class="fa fa-dashboard"></i>
+                <span>Liste des tickets à approuver</span>
+                </a>
+            </li>
+          </ul>
+          <ul class="sidebar-menu" id="nav-accordion" *ngIf="loginServiceTechnicien.isUserLoggedIn()">
+            <p class="centered"> <img src="https://th.bing.com/th/id/R.348c74d90005eff9dc59a712b0e3bdab?rik=uaM9YNz79W8%2fuQ&pid=ImgRaw&r=0" class="img-circle" width="80"> </p>
+            <h5 class="centered"> {{ firstName }}  {{ lastName }}</h5>
+            <li class="mt">
+              <a routerLink="/dashboardTechnicien">
+                <i class="fa fa-dashboard"></i>
+                <span>Acceuil</span>
+                </a>
+            </li>
+           
+            <li class="sub-menu">
+              <a routerLink="/gererIncidentTechnicien">
+                <i class="fa fa-cogs"></i>
+                <span>Gestion des incidents</span>
+                </a>
+            
+            </li>
+            <li class="sub-menu">
+              <a routerLink="/gererConfigurationTechnicien">
+                <i class="fa fa-cogs"></i>
+                <span>Gestion des configuration</span>
+                </a>
+           
+            </li>
+            <li class="sub-menu">
+              <a routerLink="/gererProblemeTechnicien">
+                <i class="fa fa-cogs"></i>
+                <span>Gestion des problèmes</span>
+                </a>
+            
+            </li>
+            <li class="sub-menu">
+              <a routerLink="/gererChangementTechnicien">
+                <i class="fa fa-cogs"></i>
+                <span>Gestion des changements</span>
+                </a>
+             
+            </li>
+            <li class="sub-menu">
+              <a routerLink="/gererServiceTechnicien">
+                <i class="fa fa-cogs"></i>
+                <span>Gestion des services</span>
+                </a>
+            
+            </li>
+          </ul>
+          <ul class="sidebar-menu" id="nav-accordion" *ngIf="loginServiceAdmin.isUserLoggedIn()">
+            <p class="centered">  <img src="https://th.bing.com/th/id/R.348c74d90005eff9dc59a712b0e3bdab?rik=uaM9YNz79W8%2fuQ&pid=ImgRaw&r=0" class="img-circle" width="80"></p>
+
+            <h5 class="centered"> {{ firstName }}  {{ lastName }}</h5>
+            <li class="mt">
+              <a routerLink="/dashboardAdmin">
+                <i class="fa fa-dashboard"></i>
+                <span>Acceuil</span>
+                </a>
+            </li>
+           
+            <li class="sub-menu">
+              <a routerLink="/gererIncidentAdmin">
+                <i class="fa fa-cogs"></i>
+                <span>Gestion des incidents</span>
+                </a>
+             
+            </li>
+            <li class="sub-menu">
+              <a routerLink="/gererConfigurationAdmin">
+                <i class="fa fa-cogs"></i>
+                <span>Gestion des configuration</span>
+                </a>
+            
+            </li>
+            <li class="sub-menu">
+              <a routerLink="/gererProblemeAdmin">
+                <i class="fa fa-cogs"></i>
+                <span>Gestion des problèmes</span>
+                </a>
+            
+            </li>
+            <li class="sub-menu">
+              <a routerLink="/gererChangementAdmin">
+                <i class="fa fa-cogs"></i>
+                <span>Gestion des changements</span>
+                </a>
+            
+            </li>
+            <li class="sub-menu">
+              <a routerLink="/gererServiceAdmin">
+                <i class="fa fa-cogs"></i>
+                <span>Gestion des services</span>
+                </a>
+             
+            </li>
+            <li class="sub-menu">
+              <a routerLink="/gererProfilAdmin">
+                <i class="fa fa-cogs"></i>
+                <span>Gestion des profils</span>
+                </a>
+           
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+</section>

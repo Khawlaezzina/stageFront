@@ -1,0 +1,102 @@
+
+ <section id="main-content">
+    <section class="wrapper">
+    
+    
+    <h4 style="color: #337ab7;"><i class="fa fa-angle-right"></i> Gestion des configurations</h4>
+    <h5 style="color: #337ab7;"><i class="fa fa-angle-right"></i> Gestion des CIs </h5>
+    <hr>
+    <section class="wrapper" id="themes" style="margin-top:2px;margin-bottom:10px;">
+          <div class="container">
+         
+            <div class="row">
+                        
+            <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th >Organisation</th>
+                    <th>Criticité</th>
+                    <th>Description</th>
+                    <th >Emplacement</th>
+                    
+                    <th >Supprimer</th> 
+                    <th>Modifier</th>              
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let admin of cis">
+                    <td>{{admin.id}}</td>
+                      <td>{{admin.nom}}</td>
+                      <td>{{admin.organisation}}</td>
+                      <td>{{admin.criticite}}</td>
+                      <td>{{admin.description}}</td>
+                      <td>{{admin.emplacement}}</td>
+                      
+                    
+                      <td><button (click)="deleteCI(admin)" class="btn btn-danger">Supprimer</button></td>
+                      <td><button (click)="updateCI(admin)" class="btn btn-warning">Modifier</button></td>
+                      
+                    </tr>
+                  
+                </tbody>
+              
+              </table>
+              <button (click)="AddCI()" class="btn btn-warning">Ajouter un CI</button>
+            </div>
+          </div>
+          </section>
+          <h5 style="color: #337ab7;"><i class="fa fa-angle-right"></i> Gestion des Contacts </h5>
+          <hr>
+          <section class="wrapper" id="themes" style="margin-top:2px;margin-bottom:10px;">
+                <div class="container">
+               
+                  <div class="row">
+                              
+                  <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+                      <thead>
+                        <tr>
+                          <th>Id</th>
+                          <th>Nom</th>
+                          <th >Prénom</th>
+                          <th>Organisation</th>
+                          <th>Email</th>
+                          <th >Numéro de téléphone</th>
+                          <th>Fonction</th>
+                          <th>Adresse</th>
+                          <th>Statut</th>
+                          <th >Supprimer</th> 
+                          <th>Modifier</th>              
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let admin of contacts">
+                          <td>{{admin.id}}</td>
+                            <td>{{admin.nom}}</td>
+                            <td>{{admin.prenom}}</td>
+                            <td>{{admin.organisation}}</td>
+                            <td>{{admin.email}}</td>
+                            <td>{{admin.numeroTelephone}}</td>
+                            <td>{{admin.fonction}}</td>
+                            <td>{{admin.adresse}}</td>
+                            <td>{{admin.statut}}</td>
+                            
+                          
+                            <td><button (click)="deleteContact(admin)" class="btn btn-danger">Supprimer</button></td>
+                            <td><button (click)="updateContact(admin)" class="btn btn-warning">Modifier</button></td>
+                            
+                          </tr>
+                        
+                      </tbody>
+                    
+                    </table>
+                    <button (click)="AddContact()" class="btn btn-warning">Ajouter un contact</button>
+                  </div>
+                </div>
+                </section>
+    </section>
+ </section>
+
